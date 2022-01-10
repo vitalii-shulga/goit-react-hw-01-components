@@ -1,8 +1,3 @@
-// При сдаче домашней работы есть ссылка на репозиторий с исходным кодом проекта.
-// В шапке репозитория есть ссылка на живую страницу на GitHub pages.
-// При посещении рабочей страницы (GitHub pages) задания, в консоли нету ошибок и предупреждений.
-// Стилизация выполнена CSS-модулями или Styled Components, поэтому классы в результирующем DOM будут отличаться от примеров.
-
 import user from 'components/SocialProfile/user.json';
 import data from 'components/Statistics/data.json';
 import friends from 'components/FriendList/friends.json';
