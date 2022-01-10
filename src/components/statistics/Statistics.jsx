@@ -1,12 +1,13 @@
 import PropTypes from 'prop-types';
 import { StatisticsItem } from './StatisticsItem';
+import { Container, Title, StatList } from './Statistics.styled.jsx';
 
 export const Statistics = ({ title, stats }) => {
   return (
-    <section class="statistics">
-      {title && <h2 class="title">{title}</h2>}
+    <Container>
+      {title && <Title>{title}</Title>}
 
-      <ul class="stat-list">
+      <StatList>
         {stats.map(stat => (
           <StatisticsItem
             key={stat.id}
@@ -14,8 +15,8 @@ export const Statistics = ({ title, stats }) => {
             percentage={stat.percentage}
           />
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </Container>
   );
 };
 

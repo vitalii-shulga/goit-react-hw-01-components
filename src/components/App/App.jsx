@@ -1,21 +1,21 @@
 // При сдаче домашней работы есть ссылка на репозиторий с исходным кодом проекта.
 // В шапке репозитория есть ссылка на живую страницу на GitHub pages.
 // При посещении рабочей страницы (GitHub pages) задания, в консоли нету ошибок и предупреждений.
-// Все что компонент ожидает в виде пропсов, передается ему при вызове.
 // Стилизация выполнена CSS-модулями или Styled Components, поэтому классы в результирующем DOM будут отличаться от примеров.
 
-import user from './social-profile/user.json';
-import data from './statistics/data.json';
-import friends from './friend-list/friends.json';
-import transactions from './transaction-history/transactions.json';
-import { Profile } from 'components/social-profile/Profile';
-import { Statistics } from 'components/statistics/Statistics';
-import { FriendList } from 'components/friend-list/FriendList';
-import { TransactionHistory } from 'components/transaction-history/TransactionHistory';
+import user from 'components/SocialProfile/user.json';
+import data from 'components/Statistics/data.json';
+import friends from 'components/FriendList/friends.json';
+import transactions from 'components/TransactionHistory/transactions.json';
+import { Profile } from 'components/SocialProfile/Profile';
+import { Statistics } from 'components/Statistics/Statistics';
+import { FriendList } from 'components/FriendList/FriendList';
+import { TransactionHistory } from 'components/TransactionHistory/TransactionHistory';
+import { Container } from './App.styled.jsx';
 
 export function App() {
   return (
-    <>
+    <Container>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -26,6 +26,6 @@ export function App() {
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />;
-    </>
+    </Container>
   );
 }
