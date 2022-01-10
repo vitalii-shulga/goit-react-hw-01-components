@@ -12,18 +12,18 @@ export const Table = styled.table`
   overflow: hidden;
 `;
 
-export const Head = styled.tr`
+export const TableHead = styled.tr`
   height: 40px;
   background-color: #045c66;
   text-align: center;
   text-transform: uppercase;
   color: white;
-`;
 
-export const HeadCell = styled.th`
-  width: calc(100% / 3);
+  th {
+    width: calc(100% / 3);
 
-  :not(:last-child) {
-    border-right: 1px solid #079aab;
+    :not(:last-child) {
+      border-right: 1px solid #079aab;
+    }
   }
 `;

@@ -8,10 +8,10 @@ export const TableItem = styled.tr`
   &:nth-child(even) {
     background-color: #08b9cd;
   }
-`;
 
-export const BodyCell = styled.td`
-  :not(:last-child) {
-    border-right: 1px solid #079aab;
+  td {
+    :not(:last-child) {
+      border-right: 1px solid #079aab;
+    }
   }
 `;

@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import { TransactionHistoryItem } from './TransactionHistoryItem';
-import { Table, Head, HeadCell } from './TransactionHistory.styled.jsx';
+import { Table, TableHead } from './TransactionHistory.styled.jsx';
 
 export const TransactionHistory = ({ items }) => {
   return (
     <Table class="transaction-history">
       <thead>
-        <Head>
-          <HeadCell>Type</HeadCell>
-          <HeadCell>Amount</HeadCell>
-          <HeadCell>Currency</HeadCell>
-        </Head>
+        <TableHead>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </TableHead>
       </thead>
 
       <tbody>
