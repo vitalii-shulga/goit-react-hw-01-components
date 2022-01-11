@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-import { TransactionHistoryItem } from './TransactionHistoryItem';
-import { Table, TableHead } from './TransactionHistory.styled.jsx';
+import { Table, TableHead, TableItem } from './TransactionHistory.styled.jsx';
 
 export const TransactionHistory = ({ items }) => {
   return (
@@ -14,13 +13,12 @@ export const TransactionHistory = ({ items }) => {
       </thead>
 
       <tbody>
-        {items.map(item => (
-          <TransactionHistoryItem
-            key={item.id}
-            type={item.type}
-            amount={item.amount}
-            currency={item.currency}
-          />
+        {items.map(({ id, type, amount, currency }) => (
+          <TableItem key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </TableItem>
         ))}
       </tbody>
     </Table>
@@ -33,4 +31,7 @@ TransactionHistory.propTypes = {
       id: PropTypes.string.isRequired,
     })
   ),
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
 };

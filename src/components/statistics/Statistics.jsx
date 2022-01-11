@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
-import { StatisticsItem } from './StatisticsItem';
-import { Container, Title, StatList } from './Statistics.styled.jsx';
+import {
+  Container,
+  Title,
+  StatList,
+  StatItem,
+  Label,
+  Percentage,
+} from './Statistics.styled.jsx';
 
 export const Statistics = ({ title, stats }) => {
   return (
@@ -8,12 +14,11 @@ export const Statistics = ({ title, stats }) => {
       {title && <Title>{title}</Title>}
 
       <StatList>
-        {stats.map(stat => (
-          <StatisticsItem
-            key={stat.id}
-            label={stat.label}
-            percentage={stat.percentage}
-          />
+        {stats.map(({ id, label, percentage }) => (
+          <StatItem key={id}>
+            <Label>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
+          </StatItem>
         ))}
       </StatList>
     </Container>
@@ -27,4 +32,6 @@ Statistics.propTypes = {
       id: PropTypes.string.isRequired,
     })
   ),
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
