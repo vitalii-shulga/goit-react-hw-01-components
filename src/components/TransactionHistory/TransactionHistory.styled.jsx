@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const Table = styled.table`
   margin: 20px auto 0 auto;
